@@ -79,6 +79,7 @@ export default function Navbar({ user }) {
                     m: "4px",
                     textTransform: "none",
                     color: "black",
+                    border: "1px solid #AC3B61",
                   }}
                 >
                   Account
@@ -88,6 +89,7 @@ export default function Navbar({ user }) {
                     m: "4px",
                     textTransform: "none",
                     color: "black",
+                    border: "1px solid #AC3B61",
                   }}
                   onClick={() => {
                     logout();
@@ -105,6 +107,7 @@ export default function Navbar({ user }) {
                     m: "4px",
                     textTransform: "none",
                     color: "black",
+                    border: "1px solid #AC3B61",
                   }}
                 >
                   Log In
@@ -116,6 +119,7 @@ export default function Navbar({ user }) {
                     m: "4px",
                     textTransform: "none",
                     color: "black",
+                    border: "1px solid #AC3B61",
                   }}
                 >
                   Sign Up

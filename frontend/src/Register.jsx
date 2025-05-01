@@ -63,7 +63,7 @@ export default function Register({ setUser }) {
     >
       <Paper
         sx={{
-          bgcolor: "#171717",
+          bgcolor: "#edc7b7",
           padding: "20px",
           width: { xs: "100%", sm: "400px" },
           maxWidth: { xs: "350px", sm: "400px" },
@@ -72,7 +72,7 @@ export default function Register({ setUser }) {
           border: "1px solid #a0aec0",
         }}
       >
-        <Typography variant="h6" sx={{ marginBottom: "12px", color: "white" }}>
+        <Typography variant="h6" sx={{ marginBottom: "12px", color: "black" }}>
           Register
         </Typography>
         <form
@@ -81,14 +81,14 @@ export default function Register({ setUser }) {
         >
           <TextField
             sx={{
-              bgcolor: "#1f1f1f",
-              "& .MuiInputLabel-root": { color: "white", opacity: 0.6 },
+              bgcolor: "#EEE2DC",
+              "& .MuiInputLabel-root": { color: "black" },
               "& .MuiOutlinedInput-root": {
-                "& fieldset": { borderColor: "#ff1744" },
-                "&:hover fieldset": { borderColor: "#ff8a80" },
-                "&.Mui-focused fieldset": { borderColor: "#ff1744" },
+                "& fieldset": { borderColor: "#AC3B61" },
+                "&:hover fieldset": { borderColor: "#AC3B61" },
+                "&.Mui-focused fieldset": { borderColor: "#AC3B61" },
               },
-              "& input": { color: "white" },
+              "& input": { color: "black" },
             }}
             label="Username"
             variant="outlined"
@@ -105,14 +105,14 @@ export default function Register({ setUser }) {
           />
           <TextField
             sx={{
-              bgcolor: "#1f1f1f",
-              "& .MuiInputLabel-root": { color: "white", opacity: 0.6 },
+              bgcolor: "#EEE2DC",
+              "& .MuiInputLabel-root": { color: "black" },
               "& .MuiOutlinedInput-root": {
-                "& fieldset": { borderColor: "#ff1744" },
-                "&:hover fieldset": { borderColor: "#ff8a80" },
-                "&.Mui-focused fieldset": { borderColor: "#ff1744" },
+                "& fieldset": { borderColor: "#AC3B61" },
+                "&:hover fieldset": { borderColor: "#AC3B61" },
+                "&.Mui-focused fieldset": { borderColor: "#AC3B61" },
               },
-              "& input": { color: "white" },
+              "& input": { color: "black" },
             }}
             label="Password"
             variant="outlined"
@@ -123,14 +123,14 @@ export default function Register({ setUser }) {
           />
           <TextField
             sx={{
-              bgcolor: "#1f1f1f",
-              "& .MuiInputLabel-root": { color: "white", opacity: 0.6 },
+              bgcolor: "#EEE2DC",
+              "& .MuiInputLabel-root": { color: "black" },
               "& .MuiOutlinedInput-root": {
-                "& fieldset": { borderColor: "#ff1744" },
-                "&:hover fieldset": { borderColor: "#ff8a80" },
-                "&.Mui-focused fieldset": { borderColor: "#ff1744" },
+                "& fieldset": { borderColor: "#AC3B61" },
+                "&:hover fieldset": { borderColor: "#AC3B61" },
+                "&.Mui-focused fieldset": { borderColor: "#AC3B61" },
               },
-              "& input": { color: "white" },
+              "& input": { color: "black" },
             }}
             label="Confirm"
             variant="outlined"
@@ -145,13 +145,13 @@ export default function Register({ setUser }) {
                 checked={togglePassword}
                 onChange={(e) => setTogglePassword(e.target.checked)}
                 sx={{
-                  color: "#ff1744",
-                  "&.Mui-checked": { color: "#ff1744" },
+                  color: "#AC3B61",
+                  "&.Mui-checked": { color: "#AC3B61" },
                 }}
               />
             }
             label={
-              <Typography variant="body1" sx={{ color: "white" }}>
+              <Typography variant="body1" sx={{ color: "black" }}>
                 Show password
               </Typography>
             }
@@ -159,7 +159,7 @@ export default function Register({ setUser }) {
           <Button
             type="submit"
             variant="contained"
-            sx={{ backgroundColor: "#ff1744", textTransform: "none" }}
+            sx={{ backgroundColor: "#AC3B61", textTransform: "none" }}
             fullWidth
           >
             Register
@@ -167,7 +167,7 @@ export default function Register({ setUser }) {
         </form>
         <Typography
           variant="body2"
-          style={{ marginTop: "16px", color: "white" }}
+          style={{ marginTop: "16px", color: "black" }}
         >
           Already have an account?{" "}
           <Link to="/login" style={{ color: "#1976d2" }}>
