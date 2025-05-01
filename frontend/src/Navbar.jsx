@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 
 const fryingPan = "/frying_pan.png";
 
-export default function Navbar({ user }) {
+export default function Navbar({ user, logout }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 

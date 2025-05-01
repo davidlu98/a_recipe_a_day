@@ -27,9 +27,11 @@ app.use(express.json());
 
 const register = require("./register");
 const account = require("./account");
+const login = require("./login");
 
 app.use("/register", register);
 app.use("/account", account);
+app.use("/login", login);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

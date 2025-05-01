@@ -13,34 +13,34 @@ function App() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  // const API_URL = import.meta.env.VITE_BACKEND_URL;
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
 
-  // useEffect(() => {
-  //   const token = window.localStorage.getItem("token");
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
 
-  //   const tryToLogin = async () => {
-  //     if (token) {
-  //       const response = await axios.get(`${API_URL}/account`, {
-  //         headers: { authorization: token },
-  //       });
+    const tryToLogin = async () => {
+      if (token) {
+        const response = await axios.get(`${API_URL}/account`, {
+          headers: { authorization: token },
+        });
 
-  //       setUser(response.data);
-  //       navigate("/");
-  //     }
-  //   };
+        setUser(response.data);
+        navigate("/");
+      }
+    };
 
-  //   tryToLogin();
-  // }, []);
+    tryToLogin();
+  }, []);
 
-  // const logout = () => {
-  //   setTimeout(() => setUser(null), 0);
-  //   window.localStorage.removeItem("token");
-  //   navigate("/");
-  // };
+  const logout = () => {
+    setTimeout(() => setUser(null), 0);
+    window.localStorage.removeItem("token");
+    navigate("/");
+  };
 
   return (
     <div>
-      <Navbar />
+      <Navbar user={user} logout={logout} />
       <Routes>
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/register" element={<Register setUser={setUser} />} />

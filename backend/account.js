@@ -18,9 +18,9 @@ router.get("/", async (req, res, next) => {
         },
       });
 
-      if (dbUser.banned) {
-        return res.status(403).json("This account has been banned.");
-      }
+      // if (dbUser.banned) {
+      //   return res.status(403).json("This account has been banned.");
+      // }
 
       return res.send(dbUser);
     } else {
