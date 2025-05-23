@@ -74,6 +74,18 @@ export default function Navbar({ user, logout }) {
               <Box>
                 <Button
                   component={Link}
+                  to="/journal"
+                  sx={{
+                    m: "4px",
+                    textTransform: "none",
+                    color: "black",
+                    border: "1px solid #AC3B61",
+                  }}
+                >
+                  Journal
+                </Button>
+                <Button
+                  component={Link}
                   to="/account"
                   sx={{
                     m: "4px",

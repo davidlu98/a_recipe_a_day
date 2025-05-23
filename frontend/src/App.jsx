@@ -8,6 +8,8 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
+import Account from "./Account";
+import Journal from "./Journal";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -44,23 +46,12 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/register" element={<Register setUser={setUser} />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/account" element={<Account user={user} />} />
+        <Route path="/journal" element={<Journal user={user} />} />
+        <Route path="/" element={<Home user={user} />} />
       </Routes>
     </div>
   );
 }
 
 export default App;
-
-{
-  /* <Route path="/account" element={<Account user={user} />} />
-<Route path="/players/:region/:name" element={<PlayerPage />} />
-<Route
-  path="/write-review/:region/:playerName/:playerId"
-  element={<CreateReview />}
-/>
-<Route
-  path="/report-review/:region/:playerName/:reviewId"
-  element={<ReportReview />}
-/> */
-}

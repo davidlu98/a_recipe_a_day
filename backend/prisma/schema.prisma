@@ -14,8 +14,55 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid())
-  username   String   @unique @db.VarChar(12)
-  password   String   @unique @db.VarChar(255)
-  created_at DateTime @default(now())
+  id           String      @id @default(uuid())
+  username     String      @unique @db.VarChar(12)
+  password     String      @db.VarChar(255)
+  created_at   DateTime    @default(now())
+  DailyDish    DailyDish[]
+  diet         String? // Example: vegetarian
+  intolerances String? // Comma separated string, example: "diary,gluten"
+}
+
+model DailyDish {
+  id       String   @id @default(uuid())
+  userId   String
+  recipeId Int
+  date     DateTime
+  user     User     @relation(fields: [userId], references: [id])
+  recipe   Recipe   @relation(fields: [recipeId], references: [id])
+
+  journal JournalEntry?
+
+  @@unique([userId, recipeId]) // Ensure a user can't get the same recipe twice
+  @@unique([userId, date]) // Prevent duplicate recipes for the same day per user
+}
+
+model Recipe {
+  id             Int      @id // Spoonacular recipe ID
+  title          String
+  image          String
+  readyInMinutes Int
+  servings       Int
+  sourceUrl      String
+  vegetarian     Boolean
+  vegan          Boolean
+  glutenFree     Boolean
+  dairyFree      Boolean
+  diets          String[]
+  dishTypes      String[]
+
+  ingredients  String[]
+  instructions String[]
+
+  createdAt DateTime    @default(now())
+  DailyDish DailyDish[]
+}
+
+model JournalEntry {
+  id          String    @id @default(uuid())
+  dish        DailyDish @relation(fields: [dailyDishId], references: [id])
+  dailyDishId String    @unique
+  notes       String?
+  imageUrl    String? // Store the uploaded image URL or filepath
+  created_at  DateTime  @default(now())
 }
